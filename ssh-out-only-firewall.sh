@@ -40,7 +40,7 @@ $IP -A OUTPUT -o $WIRED -j ACCEPT
 echo "done"
 
 echo -n "allowing all traffic on lo...   "
-$IP -A INPUT -i lo -j ACCEPT
-$IP -A OUTPUT -o lo -j ACCEPT
+$IP -A INPUT -s localhost -j ACCEPT
+$IP -A OUTPUT -s localhost -j ACCEPT
 echo "done"
 echo "firewall complete, ssh proxy required"
